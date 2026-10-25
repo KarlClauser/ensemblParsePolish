@@ -12,12 +12,16 @@ These include:
 The script ensemblParsePolish.py addresses each of the above issues to yield a reference proteome better suited for database searching of LC-MS/MS data.  
 For troubleshooting files of removed and retained entries are kept at each stage.
 
-A single running of the script can make 1 of 3 possible subsets:    
+A single running of the script can make 1 of 4 possible subsets (the 3 below and one requiring both basic and primary tags):    
   - GENCODE Comprehensive, which captures all annotated transcripts  
   - GENCODE Basic, a smaller subset of transcripts containing only full-length transcripts at protein-coding genes and enriched for alternative splicing at lncRNA genes. The length and depth of the reads generated in ONT and PacBio experiments will eventually overwhelm the GENCODE Basic category, for example by adding many tens or hundreds of full-length alternatively spliced transcripts at protein-coding genes.  (average 6.1 transcripts/gene)  
   - GENCODE Primary transcripts (v47 +) capture a minimal set of transcripts at protein coding genes and include protein-coding exons with evidence of evolutionary constraint and alternative splicing (including exon skips) with high expression, includes all MANE Select/Ensembl Canonical and MANE Plus Clinical transcripts by default. (average 1.9 transcripts/gene)
 
 The script was written and tested on Windows operating systems. Minor revision may be required for Linux.
+
+Example output of 3 possible subsets for Gencode v50 can be downloaded from:  
+sSubsetTagGencode supported values 'GENCODE_Primary', 'basic', 'basicAndPrimary' (requires both tags)
+  - https://proteomics.broadinstitute.org/ExampleDB/Gencode50_Ensembl116.zip  
 
 Prerequisites to run:
 ---------------------
@@ -40,7 +44,7 @@ Obtain annotations from BioMart website
 &emsp;&emsp;Chromosome/scaffold name, Transcript start (bp), Transcript end (bp),  
 &emsp;&emsp;Strand, Transcript type, HGNC symbol, Gene description
 
-&emsp;Download and save the file to the working directory with the following name  
+&emsp;Export as TSV format and save the file to the working directory with the following name  
 &emsp;C:\Gencode50_Ensembl116\Ensembl-v50_GRCh38_mart_export.txt
 
 Run the script from the command line:

@@ -28,14 +28,15 @@ Prerequisites to run:
 Create a working directory for inputs/outputs  
 &emsp;C:\Gencode50_Ensembl116
 
-Download required inputs from ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/latest_release/
+Download required inputs from ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/latest_release/  
 &emsp;(copy/paste ftp URL to address bar of a Windows Explorer window):
 
-&emsp;gencode.v50.pc_translations.fa.gz\
-&emsp;gencode.v50.basic.annotation.gtf.gz\
+&emsp;gencode.v50.pc_translations.fa.gz  
+&emsp;gencode.v50.basic.annotation.gtf.gz  
+&emsp;gencode.v50.primary_assembly.annotation.gtf.gz  
 &emsp;gencode.v50.annotation.gtf.gz
 
-Obtain annotations from BioMart website  
+Obtain annotations for the corresponding version from BioMart website  
 &emsp;https://www.ensembl.org/biomart/martview  
 &emsp;Set the Dataset to Human genes (GRCh38.p14)
 
@@ -70,4 +71,4 @@ Incorporate into a pipeline with another python script that treats ensemblParseP
 >#GENCODE Basic, a smaller subset of transcripts containing only full-length transcripts at protein-coding genes and enriched for alternative splicing at lncRNA genes. The length and depth of the reads generated in ONT and PacBio experiments will eventually overwhelm the GENCODE Basic category, for example by adding many tens or hundreds of full-length alternatively spliced transcripts at protein-coding genes.  (average 6.1 transcripts/gene)  
 >#GENCODE Primary transcripts (v47 +) capture a minimal set of transcripts at protein coding genes and include protein-coding exons with evidence of evolutionary constraint and alternative splicing (including exon skips) with high expression, includes all MANE Select/Ensembl Canonical and MANE Plus Clinical transcripts by default. (average 1.9 transcripts/gene)  
 >
->EPP.fMain(sSubsetTagGencode = 'GENCODE_Primary', sRefProteomeDir = r'C:\Gencode50_Ensembl116', sGencodeVersion = 'v50', sEnsemblVersion = 'Ensembl-116')\	  
+>EPP.fMain(sSubsetTagGencode = 'GENCODE_Primary', sRefProteomeDir = r'C:\Gencode50_Ensembl116', sGencodeVersion = 'v50', sEnsemblVersion = 'Ensembl-116')  
